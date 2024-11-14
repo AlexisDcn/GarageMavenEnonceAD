@@ -34,7 +34,7 @@ public class Voiture {
 		if (!estDansUnGarage()) {
 			throw new IllegalStateException("Cette voiture n'est pas dans un garage.");
 		}
-		myStationnements.get(myStationnements.size() - 1).terminer();
+		myStationnements.getLast().terminer();
 	}
 
 	public Set<Garage> garagesVisites() {
@@ -49,7 +49,7 @@ public class Voiture {
 		if (myStationnements.isEmpty()) {
 			return false;
 		}
-		return myStationnements.get(myStationnements.size() - 1).estEnCours();
+		return myStationnements.getLast().estEnCours();
 	}
 
 	public void imprimeStationnements(PrintStream out) { //pour choisir où on l'imprime.
